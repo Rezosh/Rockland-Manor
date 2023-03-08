@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <a
             href='#'
-            className='ml-auto rounded-md bg-blue-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'>
+            className='ml-auto rounded-md bg-brown-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-brown-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-600'>
             Book a Tour
           </a>
         </div>
