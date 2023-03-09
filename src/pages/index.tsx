@@ -1,6 +1,5 @@
 import client from "@/client";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
 import Contact from "@/components/contact";
 
 type SanityFileLink = {
@@ -32,6 +31,7 @@ export const getStaticProps = async () => {
       monthlyNewsletter,
       activityImages,
     },
+    revalidate: 60,
   };
 };
 
