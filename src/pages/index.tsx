@@ -61,11 +61,12 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
           />
           <p>
             At Rockland Manor, we understand that every resident is unique, with
-            their own needs and preferences. That's why we offer a wide range of
-            services and amenities to cater to your individual needs. Whether
-            you're looking for assistance with daily tasks, such as housekeeping
-            and meal preparation, or simply want to enjoy some social activities
-            with like-minded individuals, we've got you covered.
+            their own needs and preferences. That&apos;s why we offer a wide
+            range of services and amenities to cater to your individual needs.
+            Whether you&apos;re looking for assistance with daily tasks, such as
+            housekeeping and meal preparation, or simply want to enjoy some
+            social activities with like-minded individuals, we&apos;ve got you
+            covered.
           </p>
         </section>
       </Container>
@@ -196,11 +197,11 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 <p className="mb-8 max-w-md">
                   At Rockland Manor, we believe that staying active and engaged
                   is an essential part of maintaining physical and mental
-                  well-being. That's why we offer a diverse range of
+                  well-being. That&apos;s why we offer a diverse range of
                   recreational activities, including fitness classes, crafts,
-                  music, and outings. Whether you're looking to try something
-                  new or stick with familiar hobbies, there's something for
-                  everyone at Rockland Manor.
+                  music, and outings. Whether you&apos;re looking to try
+                  something new or stick with familiar hobbies, there&apos;s
+                  something for everyone at Rockland Manor.
                 </p>
 
                 <a
