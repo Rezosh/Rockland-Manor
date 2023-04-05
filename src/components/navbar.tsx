@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, MapPinIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -19,10 +20,12 @@ export default function Navbar() {
         aria-label='Global'>
         <div className='flex lg:flex-1'>
           <a href='#' className='-m-1.5 p-1.5'>
-            <span className='sr-only'>Your Company</span>
-            <img
-              className='h-8 w-auto'
-              src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+            <span className='sr-only'>Rockland Manor</span>
+            <Image
+              className='h-16 w-auto'
+              src='/logo.png'
+              width={64}
+              height={64}
               alt=''
             />
           </a>
@@ -41,17 +44,33 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className='text-sm font-semibold leading-6 text-gray-900'>
+              className='text-sm uppercase leading-6 text-dark-brown-900'>
               {item.name}
             </a>
           ))}
         </div>
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <a
-            href='#'
-            className='ml-auto rounded-md bg-brown-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-brown-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-600'>
-            Book a Tour
-          </a>
+        <div className='hidden lg:flex lg:flex-1 lg:justify-end gap-4'>
+
+          {/* Address */}
+         <div className="flex items-center gap-2 pr-4 border-r-2">
+            <MapPinIcon className='h-6 w-6' aria-hidden='true'/>
+            <div className="flex flex-col text-sm">
+              <strong>9045 County Road 17</strong>
+              Rockland, ON K4K 0J9
+            </div>
+          </div>
+
+          {/* Phone Number CTA */}
+          <div className="flex flex-col">
+            Call Us Today
+            <a
+              href='tel:6136274654'
+              className='text-sm font-semibold uppercase leading-6 text-dark-brown-900'>
+              613-627-4854
+            </a>
+          </div>
+
+      
         </div>
       </nav>
       <Dialog
@@ -63,10 +82,12 @@ export default function Navbar() {
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
             <a href='#' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>Your Company</span>
-              <img
+              <span className='sr-only'>Rockland Manor</span>
+              <Image
                 className='h-8 w-auto'
-                src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+                width={32}
+                height={32}
+                src='/logo.png'
                 alt=''
               />
             </a>
@@ -90,14 +111,27 @@ export default function Navbar() {
                   </a>
                 ))}
               </div>
-              <div className='py-6'>
-                <a
-                  href='#'
-                  className='-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                  Log in
-                </a>
-              </div>
+              <div className='py-6 flex gap-4'>
+                {/* Address */}
+         <div className="flex items-center gap-2 pr-4 border-r-2">
+            <MapPinIcon className='h-6 w-6' aria-hidden='true'/>
+            <div className="flex flex-col text-sm">
+              <strong>9045 County Road 17</strong>
+              Rockland, ON K4K 0J9
             </div>
+          </div>
+
+          {/* Phone Number CTA */}
+          <div className="flex flex-col">
+            Call Us Today
+            <a
+              href='tel:6136274654'
+              className='text-sm font-semibold uppercase leading-6 text-dark-brown-900'>
+              613-627-4854
+            </a>
+          </div>
+          </div>
+          </div>
           </div>
         </Dialog.Panel>
       </Dialog>

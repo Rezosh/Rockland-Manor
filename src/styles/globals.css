@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&family=Source+Sans+3:wght@200&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-body-text;
+    @apply text-sm;
+    @apply md:text-base;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-dark-brown-900;
+  }
+
+  a {
+    @apply text-dark-brown-900;
+    @apply hover:text-dark-brown-700;
+  }
+}

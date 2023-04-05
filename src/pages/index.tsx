@@ -1,6 +1,15 @@
 import client from "@/client";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import Contact from "@/components/contact";
+import Image from "next/image";
+import Heading from "@/components/Heading";
+import Container from "@/components/Container";
+import {
+  ArrowRightIcon,
+  CalendarDaysIcon,
+  DocumentArrowDownIcon,
+} from "@heroicons/react/24/outline";
+import Faq from "@/components/Faq";
 
 type SanityFileLink = {
   fileUrl: string;
@@ -16,59 +25,223 @@ export const getStaticProps = async () => {
     `*[_type == "activityCalendar"] | order(_createdAt desc)[0] | {"fileUrl": file.asset->url}
     `
   );
-  const monthlyNewsletter = await client.fetch(
-    `*[_type == "monthlyNewsletter"] | order(_createdAt desc)[0] | {"fileUrl": file.asset->url}
-    `
-  );
-
-  const activityImages = await client.fetch(
-    `*[_type == "activityImages"] {title, "imageLinks": imageGallery[].asset ->url}`
-  );
 
   return {
     props: {
       activityCalendar,
-      monthlyNewsletter,
-      activityImages,
     },
     revalidate: 60,
   };
 };
 
-const Index = ({
-  activityCalendar,
-  monthlyNewsletter,
-  activityImages,
-}: {
-  activityCalendar: SanityFileLink;
-  monthlyNewsletter: SanityFileLink;
-  activityImages: SanityImageLink[];
-}) => {
+const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
   return (
     <>
-      <div className='space-x-2'>
-        <a
-          href={activityCalendar?.fileUrl}
-          target='_blank'
-          className='inline-flex items-center gap-x-2 rounded-md bg-brown-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brown-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-600'>
-          Activity Calendar
-          <ArrowTopRightOnSquareIcon
-            className='-mr-0.5 h-5 w-5'
-            aria-hidden='true'
+      <Container>
+        <div className="flex flex-col lg:flex-row-reverse">
+          <img src="/hero-img.png" className="h-full w-auto" alt="" />
+          <div className="flex flex-col justify-center bg-cream p-10 text-center lg:p-16 lg:text-left">
+            <Heading title="Experience the Carefree Lifestyle You Deserve." />
+            <p className="mb-8">
+              At Rockland Manor, we believe in helping our residents live life
+              to the fullest by providing a comfortable and enjoyable lifestyle,
+              with a range of services and amenities designed to allow them to
+              pursue their passions and maintain their independence
+            </p>
+            <a href="#" className="font-links text-xl underline">
+              Read More
+            </a>
+          </div>
+        </div>
+
+        <section className="mt-16 text-center lg:grid lg:grid-cols-2 lg:text-left">
+          <Heading
+            title="Experience Comfortable Living At Rockland Manor"
+            className="lg:flex-1"
           />
-        </a>
-        <a
-          href={monthlyNewsletter?.fileUrl}
-          target='_blank'
-          className='inline-flex items-center gap-x-2 rounded-md bg-brown-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-brown-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown-600'>
-          Monthly Newsletter
-          <ArrowTopRightOnSquareIcon
-            className='-mr-0.5 h-5 w-5'
-            aria-hidden='true'
-          />
-        </a>
-      </div>
-      <Contact />
+          <p>
+            At Rockland Manor, we understand that every resident is unique, with
+            their own needs and preferences. That's why we offer a wide range of
+            services and amenities to cater to your individual needs. Whether
+            you're looking for assistance with daily tasks, such as housekeeping
+            and meal preparation, or simply want to enjoy some social activities
+            with like-minded individuals, we've got you covered.
+          </p>
+        </section>
+      </Container>
+
+      <section className="mt-16 bg-[url('../assets/services-bg.png')] py-16">
+        <Container>
+          <Heading title="Our Care" />
+          <div className="mt-10 flex flex-col items-center gap-6 lg:flex-row">
+            <div className="flex max-w-sm flex-col">
+              <img
+                src="/services-independant.png"
+                className="h-full w-auto"
+                alt=""
+              />
+              <div className="flex flex-col bg-white py-6 px-8">
+                <h3 className="mb-6 text-2xl font-medium">
+                  Independent Living
+                </h3>
+                <p className="mb-8">
+                  Our independent living program is designed to provide a
+                  carefree and enjoyable lifestyle, allowing residents to focus
+                  on the things they love without worrying about the upkeep of a
+                  home.
+                </p>
+                <div className="w-fit">
+                  <a href="#" className="group transition duration-300">
+                    Read More &#8594;
+                    <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex max-w-sm flex-col">
+              <img src="/services-semi.png" className="h-full w-auto" alt="" />
+              <div className="flex flex-col bg-white py-6 px-8">
+                <h3 className="mb-6 text-2xl font-medium">
+                  Semi-Independent Living
+                </h3>
+                <p className="mb-8">
+                  Our semi-independent living program allows residents to live
+                  comfortably and independently while enjoying the peace of mind
+                  that comes with having access to support and assistance when
+                  needed.
+                </p>
+                <div className="w-fit">
+                  <a href="#" className="group transition duration-300">
+                    Read More &#8594;
+                    <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex max-w-sm flex-col">
+              <img
+                src="/services-memory.png"
+                className="h-full w-auto"
+                alt=""
+              />
+              <div className="flex flex-col bg-white py-6 px-8">
+                <h3 className="mb-6 text-2xl font-medium">Memory Care</h3>
+                <p className="mb-8">
+                  Our memory care program provides a supportive and caring
+                  environment for our residents, allowing them to maintain their
+                  independence and while receiving the care and assistance they
+                  need to thrive.
+                </p>
+                <div className="w-fit">
+                  <a href="#" className="group transition duration-300">
+                    Read More &#8594;
+                    <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="mt-16 lg:mt-44">
+        <Container>
+          <div className="mt-10 flex flex-col items-center gap-10 lg:gap-40">
+            <div className="flex flex-col items-center gap-10 lg:flex-row">
+              <Image
+                src="/amenities-dining.jpg"
+                height={500}
+                width={500}
+                className="rounded-tl-3xl rounded-br-3xl"
+                alt=""
+              />
+              <div className="flex flex-col bg-white py-6 px-8">
+                <h3 className="mb-6 text-2xl font-medium">
+                  Restaurant-Style Dining
+                </h3>
+                <p className="mb-8 max-w-md">
+                  We know how good meals are important and promise to prepare
+                  delicious home-cooked meals made from scratch each day by our
+                  team of trained culinary professionals. Residents can select
+                  from a variety of “à la carte” menu choices designed with
+                  their health, tastes and preferences in mind.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex max-w-sm items-center gap-x-2 rounded underline"
+                >
+                  Sample Menu{" "}
+                  <DocumentArrowDownIcon
+                    className="-mr-0.5 h-5 w-5"
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center gap-10 lg:flex-row-reverse">
+              <Image
+                src="/amenities-activities.jpg"
+                height={500}
+                width={500}
+                className="rounded-tl-3xl rounded-br-3xl"
+                alt=""
+              />
+              <div className="flex flex-col bg-white py-6 px-8">
+                <h3 className="mb-6 text-2xl font-medium">
+                  Stay Active and Engaged
+                </h3>
+                <p className="mb-8 max-w-md">
+                  At Rockland Manor, we believe that staying active and engaged
+                  is an essential part of maintaining physical and mental
+                  well-being. That's why we offer a diverse range of
+                  recreational activities, including fitness classes, crafts,
+                  music, and outings. Whether you're looking to try something
+                  new or stick with familiar hobbies, there's something for
+                  everyone at Rockland Manor.
+                </p>
+
+                <a
+                  href={activityCalendar.fileUrl}
+                  target="_blank"
+                  className="inline-flex max-w-sm items-center gap-x-2 rounded underline"
+                >
+                  Activity Calendar
+                  <CalendarDaysIcon
+                    className="-mr-0.5 h-5 w-5"
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      {/* small cta section */}
+      <section className="mt-16 bg-cream py-16">
+        <Container>
+          <div className="flex flex-col items-center justify-center lg:flex-row">
+            <div className="flex-1">
+              <h3 className="mb-4 text-center text-2xl font-medium lg:text-left">
+                Ready to experience the comfort and community of Rockland Manor
+                for yourself?
+              </h3>
+              <p className="mb-8 text-center lg:text-left">
+                Schedule a tour today and discover your new home!
+              </p>
+            </div>
+            <a
+              href="#"
+              className="inline-flex max-w-sm items-center gap-x-2 rounded bg-dark-brown-900 px-6 py-3 text-white"
+            >
+              Schedule a Tour{" "}
+              <ArrowRightIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
+            </a>
+          </div>
+        </Container>
+      </section>
     </>
   );
 };
