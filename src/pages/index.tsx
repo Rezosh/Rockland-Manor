@@ -71,7 +71,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
         </section>
       </Container>
 
-      <section className="mt-16 bg-[url('../assets/services-bg.png')] py-16">
+      <section className="mt-16 bg-[url('/services-bg.png')] py-16">
         <Container>
           <Heading title="Our Care" />
           <div className="mt-10 flex flex-col items-center gap-6 lg:flex-row">
