@@ -1,15 +1,12 @@
 import client from "@/client";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
-import Contact from "@/components/contact";
-import Image from "next/image";
-import Heading from "@/components/Heading";
 import Container from "@/components/Container";
+import Heading from "@/components/Heading";
 import {
   ArrowRightIcon,
   CalendarDaysIcon,
   DocumentArrowDownIcon,
 } from "@heroicons/react/24/outline";
-import Faq from "@/components/Faq";
+import Image from "next/image";
 
 type SanityFileLink = {
   fileUrl: string;
@@ -40,7 +37,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
       <Container>
         <div className="flex flex-col lg:flex-row-reverse">
           <img src="/hero-img.png" className="h-full w-auto" alt="" />
-          <div className="flex flex-col justify-center bg-cream p-10 text-center lg:p-16 lg:text-left">
+          <div className="flex flex-col items-center justify-center bg-cream p-10 text-center lg:items-start lg:p-16 lg:text-left">
             <Heading title="Experience the Carefree Lifestyle You Deserve." />
             <p className="mb-8">
               At Rockland Manor, we believe in helping our residents live life
@@ -48,18 +45,18 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
               with a range of services and amenities designed to allow them to
               pursue their passions and maintain their independence
             </p>
-            <a href="#" className="font-links text-xl underline">
-              Read More
-            </a>
+            <div className="w-fit text-center lg:text-left">
+              <a href="#" className="group  transition duration-300 ">
+                Read More &#8594;
+                <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <section className="mt-16 text-center lg:grid lg:grid-cols-2 lg:text-left">
-          <Heading
-            title="Experience Comfortable Living At Rockland Manor"
-            className="lg:flex-1"
-          />
-          <p>
+        <section className="flex flex-col items-center py-16 text-center lg:flex-row  lg:text-left">
+          <Heading title="Experience Comfortable Living At Rockland Manor" />
+          <p className="max-w-xl lg:max-w-lg">
             At Rockland Manor, we understand that every resident is unique, with
             their own needs and preferences. That&apos;s why we offer a wide
             range of services and amenities to cater to your individual needs.
