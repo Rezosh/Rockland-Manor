@@ -54,8 +54,11 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
           </div>
         </div>
 
-        <section className="flex flex-col items-center py-16 text-center lg:flex-row  lg:text-left">
-          <Heading title="Experience Comfortable Living At Rockland Manor" />
+        <section className="mt-16 flex flex-col items-center justify-between py-16 text-center  lg:flex-row lg:text-left">
+          <Heading
+            title="Experience Comfortable Living At Rockland Manor"
+            className="max-w-xl lg:max-w-lg"
+          />
           <p className="max-w-xl lg:max-w-lg">
             At Rockland Manor, we understand that every resident is unique, with
             their own needs and preferences. That&apos;s why we offer a wide
