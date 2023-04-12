@@ -1,12 +1,13 @@
 import client from "@/client";
 import Container from "@/components/Container";
-import Heading from "@/components/Heading";
+import { Heading } from "@/components/Heading";
 import {
   ArrowRightIcon,
   CalendarDaysIcon,
   DocumentArrowDownIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
 
 type SanityFileLink = {
   fileUrl: string;
@@ -92,10 +93,13 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                   home.
                 </p>
                 <div className="w-fit">
-                  <a href="#" className="group transition duration-300">
+                  <Link
+                    href="/services/independent-living"
+                    className="group transition duration-300"
+                  >
                     Read More &#8594;
                     <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -136,10 +140,13 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                   need to thrive.
                 </p>
                 <div className="w-fit">
-                  <a href="#" className="group transition duration-300">
+                  <Link
+                    href="/services/memory-care"
+                    className="group transition duration-300"
+                  >
                     Read More &#8594;
                     <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
