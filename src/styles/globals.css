@@ -11,6 +11,13 @@
     @apply md:text-base;
   }
 
+  p {
+    @apply text-sm;
+    @apply md:text-base;
+    @apply text-center;
+    @apply md:text-left;
+  }
+
   h1,
   h2,
   h3,
