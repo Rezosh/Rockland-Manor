@@ -22,7 +22,7 @@ const amenities = [
   "24 Hour On-Site Staff",
 ];
 
-const IndependentCarePage = () => {
+const SemiIndependentCarePage = () => {
   return (
     <>
       <div className="flex items-center justify-center bg-gradient-to-t from-[#b9a284]">
@@ -32,7 +32,7 @@ const IndependentCarePage = () => {
           alt="Picture of the Rockland Manor front entrance"
         />
         <Heading
-          title="Independent Living At Rockland Manor"
+          title="Semi - Independent Living At Rockland Manor"
           className="absolute text-white"
         />
       </div>
@@ -41,51 +41,48 @@ const IndependentCarePage = () => {
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
           <div className="flex flex-col gap-20">
             <div>
-              <SubHeading title="Join Our Independent Living Community" />
+              <SubHeading title="Semi - Independent Living at Rockland Manor" />
               <p className="text-center lg:text-left">
-                As we enter our golden years, we all want to stay active,
-                social, and have fun! Our focus shifts from taking care of our
-                homes and families to cherishing time with loved ones, friends,
-                and enjoying life. If you&apos;re at this stage in life, you
-                might be exploring different living options. Imagine living in a
-                community of people just like you, where you can connect and
-                socialize while enjoying your freedom and independence. At
-                Rockland Manor, we offer an independent living community in
-                Rockland, ON (just 20 minutes east of Ottawa) for
-                self-sufficient seniors looking for a new place to call home. We
-                welcome you to come and visit our community for a complimentary
-                tour, and we can&apos;t wait to show you around our home!
+                As we get older, sometimes we need a little extra help to
+                maintain our independence. That&apos;s why at Rockland Manor, we
+                offer semi-independent living for individuals who could use some
+                assistance but still want to retain their freedom. You&apos;ll
+                have your own private room and belongings, and access to all of
+                our amenities and activities. Plus, our health professionals and
+                staff are always available to lend a helping hand when needed.
+                If you or a loved one is looking for a supportive community,
+                choose Rockland Manor for a comfortable and worry-free
+                lifestyle.
               </p>
             </div>
 
             <div>
-              <SubHeading title="An Independent Lifestyle for Active Seniors" />
+              <SubHeading title="Find a Supportive Community with Top-Notch Amenities and a Helping Hand" />
               <p className="text-center lg:text-left">
-                At our independent living community, you can enjoy the freedom
-                to live as you please while having access to a wide range of
-                amenities. Now is the time to unwind and savor your retirement
-                years. At Rockland Manor, we take care of the maintenance of
-                your home, as well as daily tasks such as cooking and cleaning,
-                so that you can spend your days engaging in fun activities with
-                other residents, visiting with family and friends, or taking
-                care of errands. We understand that you deserve to continue
-                pursuing your passions and interests, and we&apos;re here to
-                provide support when you need it and a secure place to call
-                home. As we age, we face unique challenges, and having medical
-                professionals nearby ensures that you can enjoy a happy and
-                healthy lifestyle.
+                Leaving your longtime home can be a difficult transition. But at
+                Rockland Manor, we&apos;re here to make it easier. Our community
+                offers semi-independent living that gives you the privacy of
+                your own room or suite, while also providing access to all of
+                our common areas, amenities, and social activities. Plus, our
+                24-hour staff is always available to lend a helping hand
+                whenever you need it. We offer assistance with a wide range of
+                tasks, so you can focus on enjoying your new worry-free
+                lifestyle.
               </p>
             </div>
 
             <div>
-              <SubHeading title="Comforts and Conveniences Included with Your Home" />
+              <SubHeading title="Experience Supportive and Independent Living with Our Semi-Independent Services and Amenities" />
               <p className="text-center lg:text-left">
-                At Rockland Manor, your independent living apartment includes
-                everything you need to make your new home comfortable and
-                convenient. Each apartment is equipped a private bathroom, ample
-                storage space and air conditioner/heater. In addition, our
-                community offers a wide range of amenities and services to make
-                your life easier and more enjoyable, such as:
+                At Rockland Manor, our semi-independent living services provide
+                assistance with a variety of daily activities, including
+                bathing, dressing, and ambulation. Our 24-hour staff is always
+                on hand to help you maintain your independence while providing
+                the support you need. In addition, we offer medication
+                management, regular health assessments, and other personalized
+                care services. In addition, our community offers a wide range of
+                amenities and services to make your life easier and more
+                enjoyable, such as:
               </p>
               <ul className="mt-10 grid lg:grid-cols-3 ">
                 {amenities.map((amenity) => (
@@ -128,4 +125,4 @@ const IndependentCarePage = () => {
   );
 };
 
-export default IndependentCarePage;
+export default SemiIndependentCarePage;

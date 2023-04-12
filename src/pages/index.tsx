@@ -117,10 +117,13 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                   needed.
                 </p>
                 <div className="w-fit">
-                  <a href="#" className="group transition duration-300">
+                  <Link
+                    href="/services/semi-independent"
+                    className="group transition duration-300"
+                  >
                     Read More &#8594;
                     <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
