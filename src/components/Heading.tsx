@@ -15,4 +15,14 @@ const Heading = ({ title, className }: Props): ReactElement => {
   );
 };
 
-export default Heading;
+const SubHeading = ({ title, className }: Props): ReactElement => {
+  return (
+    <h2
+      className={`mb-4 text-center text-xl font-bold md:text-2xl lg:text-left ${className}`}
+    >
+      {title}
+    </h2>
+  );
+};
+
+export { Heading, SubHeading };
