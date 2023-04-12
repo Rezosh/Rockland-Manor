@@ -22,7 +22,8 @@ module.exports = {
           
           900: "#484036"
         },
-        "cream": "#F1E9DE"
+        "cream": "#F1E9DE",
+        "coral": "#FC7753",
       },
     },
   },
