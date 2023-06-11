@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Home", href: "#" },
-  { name: "About Us", href: "#" },
-  { name: "Our Services", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Our Services", href: "#services" },
   { name: "Accommodations", href: "#" },
 ];
 
@@ -47,6 +47,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
+              scroll={false}
               className="group text-sm uppercase leading-6 text-dark-brown-900 transition duration-300"
             >
               {item.name}
