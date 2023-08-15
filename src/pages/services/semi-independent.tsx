@@ -24,7 +24,7 @@ const amenities = [
 
 const SemiIndependentCarePage = () => {
   return (
-    <>
+    <div className="mt-28">
       <div className="flex items-center justify-center bg-gradient-to-t from-[#b9a284]">
         <Image
           src={headerImage}
@@ -86,7 +86,10 @@ const SemiIndependentCarePage = () => {
               </p>
               <ul className="mt-10 grid lg:grid-cols-3 ">
                 {amenities.map((amenity) => (
-                  <li key={amenities.indexOf(amenity)} className="mb-2 inline-flex items-center gap-1.5">
+                  <li
+                    key={amenities.indexOf(amenity)}
+                    className="mb-2 inline-flex items-center gap-1.5"
+                  >
                     <span>
                       <CheckIcon className="h-5 w-5 text-dark-brown-600" />
                     </span>{" "}
@@ -121,7 +124,7 @@ const SemiIndependentCarePage = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

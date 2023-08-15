@@ -34,11 +34,11 @@ export const getStaticProps = async () => {
 
 const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
   return (
-    <>
+    <div className="mt-28">
       <Container>
         <div className="flex flex-col lg:flex-row-reverse">
-          <img src="/hero-img.png" className="h-full w-auto" alt="" />
-          <div className="flex flex-col items-center justify-center bg-cream p-10 text-center lg:items-start lg:p-16 lg:text-left">
+          <img src="/hero-img.png" className="h-auto w-auto lg:w-1/2" alt="" />
+          <div className="flex flex-col items-center justify-center bg-cream p-10 text-center lg:w-1/2 lg:items-start lg:p-16 lg:text-left">
             <Heading title="Experience the Carefree Lifestyle You Deserve." />
             <p className="mb-8">
               At Rockland Manor, we believe in helping our residents live life
@@ -256,7 +256,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 };
 

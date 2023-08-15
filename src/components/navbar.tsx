@@ -3,6 +3,11 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, MapPinIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import useScrollPosition from "@/hooks/useScrollPosition";
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -14,10 +19,23 @@ const navigation = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollPosition = useScrollPosition();
+  //"fixed top-0 left-0 z-20 mb-10 w-full bg-white/80"
+
   return (
-    <header>
+    <header
+      className={classNames(
+        scrollPosition > 140 ? "shadow" : "shadow-none ",
+        "trasition fixed top-0 left-0 z-20 w-full bg-white transition-shadow duration-500 ease-in-out"
+      )}
+    >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className={classNames(
+          scrollPosition > 140
+            ? "trasition py-2 duration-500 ease-in-out"
+            : "py-6",
+          "mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8"
+        )}
         aria-label="Global"
       >
         <div className="flex lg:flex-1">

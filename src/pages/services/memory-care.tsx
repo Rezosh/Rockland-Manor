@@ -8,7 +8,7 @@ import headerImage from "../../../public/services-header.jpg";
 
 const MemoryCarePage = () => {
   return (
-    <>
+    <div className="mt-28">
       <div className="flex items-center justify-center bg-gradient-to-t from-[#b9a284]">
         <Image
           src={headerImage}
@@ -153,7 +153,7 @@ const MemoryCarePage = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
