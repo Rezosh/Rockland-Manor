@@ -9,15 +9,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-      user: process.env.CONTACT_EMAIL,
-      pass: process.env.CONTACT_EMAIL_PASSWORD,
+      user: "manoirrocklandmanor@gmail.com",
+      pass: "tpcugxofoxwufovi",
     },
     secure: true,
   });
 
   const mailData = {
-    from: process.env.CONTACT_EMAIL,
-    to: "reception@manoirrocklandmanor.com",
+    from: "manoirrocklandmanor@gmail.com",
+    to: "corneausebastien09@gmail.com",
     subject: `New Message From Website - ${firstName} ${lastName}`,
     text: message,
     html: `<div>${message}</div><p>Sent By: ${

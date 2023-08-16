@@ -5,6 +5,17 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { BiBath, BiBed, BiHome } from "react-icons/bi";
+import studioWithDen from "../../public/studio-with-den.png";
+import studioWithBalcony from "../../public/studio-with-balcony.png";
+import smallStudio from "../../public/small-studio.png";
+import studioAssisted from "../../public/studio-assisted.png";
+import oneBedSuite from "../../public/one-bed-suite.png";
+import manorTheatre from "../../public/manor-theatre.png";
+import manorBar from "../../public/manor-bar.png";
+import manorLibrary from "../../public/manor-library.png";
+import manorChapel from "../../public/manor-chapel.jpg";
+import manorSalon from "../../public/manor-salon.png";
+import manorLobby from "../../public/manor-lobby.png";
 
 const suites = [
   {
@@ -20,12 +31,12 @@ const suites = [
     },
     images: [
       {
-        src: "/small-studio.png",
+        src: smallStudio,
         alt: "Small Studio",
         caption: "Studio Suite",
       },
       {
-        src: "/studio-with-balcony.png",
+        src: studioWithBalcony,
         alt: "Studio with Balcony",
         caption: "Studio with Balcony",
       },
@@ -44,7 +55,7 @@ const suites = [
     },
     images: [
       {
-        src: "/studio-with-den.png",
+        src: studioWithDen,
         alt: "Studio with Den",
         caption: "Studio with Den",
       },
@@ -63,7 +74,7 @@ const suites = [
     },
     images: [
       {
-        src: "/one-bed-suite.png",
+        src: oneBedSuite,
         alt: "One Bedroom",
         caption: "One Bedroom Suite",
       },
@@ -81,7 +92,7 @@ const suites = [
     },
     images: [
       {
-        src: "/studio-assisted.png",
+        src: studioAssisted,
         alt: "Studio Assisted Living",
         caption: "Studio Assisted Living",
       },
@@ -108,7 +119,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-theatre.png"
+                  src={manorTheatre}
                   alt=""
                 />
                 <div className="py-4 text-center">Theatre</div>
@@ -116,7 +127,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-bar.png"
+                  src={manorBar}
                   alt=""
                 />
                 <div className="py-4 text-center">Bar</div>
@@ -124,7 +135,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-library.png"
+                  src={manorLibrary}
                   alt=""
                 />
                 <div className="py-4 text-center">Library</div>
@@ -132,7 +143,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-chapel.jpg"
+                  src={manorChapel}
                   alt=""
                 />
                 <div className="py-4 text-center">Chapel</div>
@@ -140,7 +151,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-salon.png"
+                  src={manorSalon}
                   alt=""
                 />
                 <div className="py-4 text-center">Hair Salon</div>
@@ -148,7 +159,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-lobby.png"
+                  src={manorLobby}
                   alt=""
                 />
                 <div className="py-4 text-center text-base">Lobby</div>
