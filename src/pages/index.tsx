@@ -1,22 +1,17 @@
 import client from "@/client";
 import ContactForm from "@/components/ContactForm";
 import Container from "@/components/Container";
-import { Heading, SubHeading } from "@/components/Heading";
+import { Heading } from "@/components/Heading";
 import {
-  ArrowRightIcon,
   CalendarDaysIcon,
   DocumentArrowDownIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import heroImage from "../public/hero-Image.png";
 
 type SanityFileLink = {
   fileUrl: string;
-};
-
-type SanityImageLink = {
-  title: string;
-  imageLinks: string[];
 };
 
 export const getStaticProps = async () => {
@@ -38,11 +33,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
     <div>
       <Container>
         <div className="flex flex-col lg:flex-row-reverse">
-          <Image
-            src="/hero-Image.png"
-            className="h-auto w-auto lg:w-1/2"
-            alt=""
-          />
+          <Image src={heroImage} className="h-auto w-auto lg:w-1/2" alt="" />
           <div className="flex flex-col items-center justify-center bg-cream p-10 text-center lg:w-1/2 lg:items-start lg:p-16 lg:text-left">
             <Heading title="Experience the Carefree Lifestyle You Deserve." />
             <p className="mb-8">
