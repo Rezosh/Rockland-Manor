@@ -8,7 +8,10 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import heroImage from "../public/hero-Image.png";
+import heroImage from "../../public/hero-img.png";
+import independentServicesImg from "../../public/services-independant.png";
+import semiIndependentServicesImg from "../../public/services-semi.png";
+import memoryServiceImg from "../../public/services-memory.png";
 
 type SanityFileLink = {
   fileUrl: string;
@@ -79,7 +82,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
           <div className="mt-10 flex flex-col items-center gap-6 lg:flex-row">
             <div className="flex max-w-sm flex-col">
               <Image
-                src="/services-independant.png"
+                src={independentServicesImg}
                 className="h-full w-auto"
                 alt=""
               />
@@ -107,7 +110,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
 
             <div className="flex max-w-sm flex-col">
               <Image
-                src="/services-semi.png"
+                src={semiIndependentServicesImg}
                 className="h-full w-auto"
                 alt=""
               />
@@ -134,11 +137,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
             </div>
 
             <div className="flex max-w-sm flex-col">
-              <Image
-                src="/services-memory.png"
-                className="h-full w-auto"
-                alt=""
-              />
+              <Image src={memoryServiceImg} className="h-full w-auto" alt="" />
               <div className="flex flex-col bg-white py-6 px-8">
                 <h3 className="mb-6 text-2xl font-medium">Memory Care</h3>
                 <p className="mb-8">
