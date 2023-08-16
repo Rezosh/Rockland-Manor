@@ -90,7 +90,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 <h3 className="mb-6 text-2xl font-medium">
                   Independent Living
                 </h3>
-                <p className="mb-8">
+                <p className="mb-8 text-left">
                   Our independent living program is designed to provide a
                   carefree and enjoyable lifestyle, allowing residents to focus
                   on the things they love without worrying about the upkeep of a
@@ -118,7 +118,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 <h3 className="mb-6 text-2xl font-medium">
                   Semi-Independent Living
                 </h3>
-                <p className="mb-8">
+                <p className="mb-8 text-left">
                   Our semi-independent living program allows residents to live
                   comfortably and independently while enjoying the peace of mind
                   that comes with having access to support and assistance when
@@ -140,7 +140,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
               <Image src={memoryServiceImg} className="h-full w-auto" alt="" />
               <div className="flex flex-col bg-white py-6 px-8">
                 <h3 className="mb-6 text-2xl font-medium">Memory Care</h3>
-                <p className="mb-8">
+                <p className="mb-8 text-left">
                   Our memory care program provides a supportive and caring
                   environment for our residents, allowing them to maintain their
                   independence and while receiving the care and assistance they
@@ -173,7 +173,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 alt=""
               />
               <div className="flex flex-col bg-white py-6 px-8">
-                <h3 className="mb-6 text-2xl font-medium">
+                <h3 className="mb-6 text-center text-2xl font-medium lg:text-left">
                   Restaurant-Style Dining
                 </h3>
                 <p className="mb-8 max-w-md">
@@ -184,7 +184,8 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                   their health, tastes and preferences in mind.
                 </p>
                 <a
-                  href="#"
+                  href="/SampleMenu.pdf"
+                  target="_blank"
                   className="inline-flex max-w-sm items-center gap-x-2 rounded underline"
                 >
                   Sample Menu{" "}
