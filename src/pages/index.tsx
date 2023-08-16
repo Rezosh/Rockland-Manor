@@ -1,6 +1,7 @@
 import client from "@/client";
+import ContactForm from "@/components/ContactForm";
 import Container from "@/components/Container";
-import { Heading } from "@/components/Heading";
+import { Heading, SubHeading } from "@/components/Heading";
 import {
   ArrowRightIcon,
   CalendarDaysIcon,
@@ -34,10 +35,14 @@ export const getStaticProps = async () => {
 
 const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
   return (
-    <div className="mt-28">
+    <div>
       <Container>
         <div className="flex flex-col lg:flex-row-reverse">
-          <img src="/hero-img.png" className="h-auto w-auto lg:w-1/2" alt="" />
+          <Image
+            src="/hero-Image.png"
+            className="h-auto w-auto lg:w-1/2"
+            alt=""
+          />
           <div className="flex flex-col items-center justify-center bg-cream p-10 text-center lg:w-1/2 lg:items-start lg:p-16 lg:text-left">
             <Heading title="Experience the Carefree Lifestyle You Deserve." />
             <p className="mb-8">
@@ -47,9 +52,11 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
               pursue their passions and maintain their independence
             </p>
             <div className="w-fit text-center lg:text-left">
-              <a href="#" className="group  transition duration-300 ">
-                Read More &#8594;
-                <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-x-2 rounded bg-coral py-3 px-4 text-sm font-medium text-white transition duration-300 hover:scale-105 hover:text-white"
+              >
+                Book A Tour
               </a>
             </div>
           </div>
@@ -80,7 +87,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
           <Heading title="Our Care" />
           <div className="mt-10 flex flex-col items-center gap-6 lg:flex-row">
             <div className="flex max-w-sm flex-col">
-              <img
+              <Image
                 src="/services-independant.png"
                 className="h-full w-auto"
                 alt=""
@@ -108,7 +115,11 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
             </div>
 
             <div className="flex max-w-sm flex-col">
-              <img src="/services-semi.png" className="h-full w-auto" alt="" />
+              <Image
+                src="/services-semi.png"
+                className="h-full w-auto"
+                alt=""
+              />
               <div className="flex flex-col bg-white py-6 px-8">
                 <h3 className="mb-6 text-2xl font-medium">
                   Semi-Independent Living
@@ -132,7 +143,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
             </div>
 
             <div className="flex max-w-sm flex-col">
-              <img
+              <Image
                 src="/services-memory.png"
                 className="h-full w-auto"
                 alt=""
@@ -246,15 +257,11 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 Schedule a tour today and discover your new home!
               </p>
             </div>
-            <a
-              href="#"
-              className="inline-flex max-w-sm items-center gap-x-2 rounded bg-dark-brown-900 px-6 py-3 text-white"
-            >
-              Schedule a Tour{" "}
-              <ArrowRightIcon className="-mr-0.5 h-5 w-5" aria-hidden="true" />
-            </a>
           </div>
         </Container>
+      </section>
+      <section id="contact">
+        <ContactForm />
       </section>
     </div>
   );
