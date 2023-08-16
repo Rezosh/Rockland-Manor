@@ -12,8 +12,8 @@ function classNames(...classes: string[]) {
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
-  { name: "Our Services", href: "#services" },
-  { name: "Accommodations", href: "#" },
+  { name: "Our Services", href: "/#services" },
+  { name: "Accommodations", href: "/accommodations" },
 ];
 
 export default function Navbar() {
@@ -25,8 +25,10 @@ export default function Navbar() {
   return (
     <header
       className={classNames(
-        scrollPosition > 140 ? "shadow" : "shadow-none ",
-        "trasition fixed top-0 left-0 z-20 w-full bg-white transition-shadow duration-500 ease-in-out"
+        scrollPosition > 140 ? "shadow" : "shadow-none",
+        `trasition  top-0 left-0 z-20 w-full bg-white transition-shadow duration-500 ease-in-out ${
+          mobileMenuOpen ? "hidden" : "fixed"
+        }`
       )}
     >
       <nav
@@ -101,7 +103,7 @@ export default function Navbar() {
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <div className="fixed inset-0 z-10" />
+        <div className="fixed inset-0 z-10 " />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
@@ -123,8 +125,8 @@ export default function Navbar() {
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
+          <div className="mt-6 flow-root h-full">
+            <div className="-my-6 flex h-full flex-col justify-between divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <a

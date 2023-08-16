@@ -24,7 +24,7 @@ const amenities = [
 
 const IndependentCarePage = () => {
   return (
-    <div className="mt-28">
+    <div>
       <div className="flex items-center justify-center bg-gradient-to-t from-[#b9a284]">
         <Image
           src={headerImage}
