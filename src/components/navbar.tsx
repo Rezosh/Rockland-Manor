@@ -4,10 +4,7 @@ import { Bars3Icon, MapPinIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import useScrollPosition from "@/hooks/useScrollPosition";
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "@/utils/helperFunctions";
 
 const navigation = [
   { name: "Home", href: "/" },
