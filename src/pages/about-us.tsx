@@ -3,7 +3,6 @@ import { SubHeading } from "@/components/Heading";
 import Image from "next/image";
 
 import aboutUsRocklandImg from "../../public/about-us-rockland-image.png";
-import aboutUsDonationImg from "../../public/about-us-donation.jpg";
 
 const AboutUsPage = () => {
   return (
@@ -37,15 +36,6 @@ const AboutUsPage = () => {
               and a community, not just another seniors care residence.
             </p>
           </div>
-        </div>
-        <div>
-          <Image
-            src={aboutUsDonationImg}
-            alt="h-96 w-auto"
-            placeholder="blur"
-          />
-          <SubHeading title="Social Responsibility: Giving Back to Our Community" />
-          <p className="mt-10"></p>
         </div>
       </Container>
     </div>
