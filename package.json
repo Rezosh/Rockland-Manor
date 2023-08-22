@@ -16,6 +16,7 @@
     "@types/node": "18.14.4",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "embla-carousel-react": "^8.0.0-rc11",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "next": "13.2.3",
@@ -25,11 +26,13 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "sanity": "^3.5.1",
+    "sharp": "^0.32.5",
     "styled-components": "^5.2.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",
+    "@types/nodemailer": "^6.4.9",
     "autoprefixer": "^10.4.13",
     "eslint-config-prettier": "^8.7.0",
     "postcss": "^8.4.21",

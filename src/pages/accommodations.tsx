@@ -6,6 +6,15 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { BiBath, BiBed, BiHome } from "react-icons/bi";
 
+import manorTheatre from "../../public/manor-theatre.png";
+import manorBar from "../../public/manor-bar.png";
+import manorLibrary from "../../public/manor-library.png";
+import manorChapel from "../../public/manor-chapel.jpg";
+import manorSalon from "../../public/manor-salon.png";
+import manorLobby from "../../public/manor-lobby.png";
+import Carousel from "@/components/Carousel/Carousel";
+import { EmblaOptionsType } from "embla-carousel-react";
+
 const suites = [
   {
     name: "Studio Suite",
@@ -19,16 +28,11 @@ const suites = [
       size: "300 - 400 Sq. Ft.",
     },
     images: [
-      {
-        src: "/small-studio.png",
-        alt: "Small Studio",
-        caption: "Studio Suite",
-      },
-      {
-        src: "/studio-with-balcony.png",
-        alt: "Studio with Balcony",
-        caption: "Studio with Balcony",
-      },
+      "/small-studio.png",
+      "/studio-with-balcony.png",
+      "/studio-suite-1.jpg",
+      "/studio-suite-2.jpg",
+      "/studio-suite-3.jpg",
     ],
   },
   {
@@ -42,13 +46,7 @@ const suites = [
       bath: "1 Bath",
       size: "400 - 550 Sq. Ft.",
     },
-    images: [
-      {
-        src: "/studio-with-den.png",
-        alt: "Studio with Den",
-        caption: "Studio with Den",
-      },
-    ],
+    images: ["/studio-with-den.png", "/studio-den-1.jpg", "/studio-den-2.jpg"],
   },
   {
     name: "One Bedroom Suite",
@@ -61,13 +59,7 @@ const suites = [
       bath: "1 Bath",
       size: "650 - 800 Sq. Ft.",
     },
-    images: [
-      {
-        src: "/one-bed-suite.png",
-        alt: "One Bedroom",
-        caption: "One Bedroom Suite",
-      },
-    ],
+    images: ["/one-bed-suite.png"],
   },
   {
     name: "Studio Suite - Assisted Living/Memory Care",
@@ -79,17 +71,13 @@ const suites = [
       bath: "1 Bath",
       size: "350 - 400 Sq. Ft.",
     },
-    images: [
-      {
-        src: "/studio-assisted.png",
-        alt: "Studio Assisted Living",
-        caption: "Studio Assisted Living",
-      },
-    ],
+    images: ["/studio-assisted.png"],
   },
 ];
 
 const Accommodations = () => {
+  const OPTIONS: EmblaOptionsType = {};
+  const SLIDE_COUNT = 10;
   return (
     <>
       <section>
@@ -108,7 +96,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-theatre.png"
+                  src={manorTheatre}
                   alt=""
                 />
                 <div className="py-4 text-center">Theatre</div>
@@ -116,7 +104,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-bar.png"
+                  src={manorBar}
                   alt=""
                 />
                 <div className="py-4 text-center">Bar</div>
@@ -124,7 +112,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-library.png"
+                  src={manorLibrary}
                   alt=""
                 />
                 <div className="py-4 text-center">Library</div>
@@ -132,7 +120,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-chapel.jpg"
+                  src={manorChapel}
                   alt=""
                 />
                 <div className="py-4 text-center">Chapel</div>
@@ -140,7 +128,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-salon.png"
+                  src={manorSalon}
                   alt=""
                 />
                 <div className="py-4 text-center">Hair Salon</div>
@@ -148,7 +136,7 @@ const Accommodations = () => {
               <div>
                 <Image
                   className="h-auto max-w-full rounded-lg"
-                  src="/manor-lobby.png"
+                  src={manorLobby}
                   alt=""
                 />
                 <div className="py-4 text-center text-base">Lobby</div>
@@ -215,7 +203,8 @@ const Accommodations = () => {
                             </div>
                           </div>
                           <div className="flex w-full flex-col items-center justify-evenly gap-4 lg:flex-row">
-                            {suite.images.map((image, idx) => {
+                            <Carousel images={suite.images} options={OPTIONS} />
+                            {/* {suite.images.map((image, idx) => {
                               return (
                                 <figure key={idx}>
                                   <Image
@@ -228,7 +217,7 @@ const Accommodations = () => {
                                   </figcaption>
                                 </figure>
                               );
-                            })}
+                            })} */}
                           </div>
                         </div>
                       </Disclosure.Panel>

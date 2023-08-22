@@ -2,14 +2,17 @@ import Container from "@/components/Container";
 import { SubHeading } from "@/components/Heading";
 import Image from "next/image";
 
+import aboutUsRocklandImg from "../../public/about-us-rockland-image.png";
+
 const AboutUsPage = () => {
   return (
     <div>
       <Container>
         <div className="flex flex-col space-y-5 bg-cream md:flex-row-reverse ">
           <Image
-            src="/about-us-rockland-image.png"
+            src={aboutUsRocklandImg}
             alt=""
+            placeholder="blur"
             className="h-auto w-full object-cover md:w-1/2"
           />
           <div className="p-12 text-center lg:text-left">
@@ -33,11 +36,6 @@ const AboutUsPage = () => {
               and a community, not just another seniors care residence.
             </p>
           </div>
-        </div>
-        <div>
-          <Image src="/about-us-donation.jpg" alt="h-96 w-auto" />
-          <SubHeading title="Social Responsibility: Giving Back to Our Community" />
-          <p className="mt-10"></p>
         </div>
       </Container>
     </div>

@@ -1,22 +1,20 @@
 import client from "@/client";
 import ContactForm from "@/components/ContactForm";
 import Container from "@/components/Container";
-import { Heading, SubHeading } from "@/components/Heading";
+import { Heading } from "@/components/Heading";
 import {
-  ArrowRightIcon,
   CalendarDaysIcon,
   DocumentArrowDownIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import heroImage from "../../public/hero-img.png";
+import independentServicesImg from "../../public/services-independant.png";
+import semiIndependentServicesImg from "../../public/services-semi.png";
+import memoryServiceImg from "../../public/services-memory.png";
 
 type SanityFileLink = {
   fileUrl: string;
-};
-
-type SanityImageLink = {
-  title: string;
-  imageLinks: string[];
 };
 
 export const getStaticProps = async () => {
@@ -38,11 +36,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
     <div>
       <Container>
         <div className="flex flex-col lg:flex-row-reverse">
-          <Image
-            src="/hero-Image.png"
-            className="h-auto w-auto lg:w-1/2"
-            alt=""
-          />
+          <Image src={heroImage} className="h-auto w-auto lg:w-1/2" alt="" />
           <div className="flex flex-col items-center justify-center bg-cream p-10 text-center lg:w-1/2 lg:items-start lg:p-16 lg:text-left">
             <Heading title="Experience the Carefree Lifestyle You Deserve." />
             <p className="mb-8">
@@ -88,7 +82,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
           <div className="mt-10 flex flex-col items-center gap-6 lg:flex-row">
             <div className="flex max-w-sm flex-col">
               <Image
-                src="/services-independant.png"
+                src={independentServicesImg}
                 className="h-full w-auto"
                 alt=""
               />
@@ -96,7 +90,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 <h3 className="mb-6 text-2xl font-medium">
                   Independent Living
                 </h3>
-                <p className="mb-8">
+                <p className="mb-8 text-left">
                   Our independent living program is designed to provide a
                   carefree and enjoyable lifestyle, allowing residents to focus
                   on the things they love without worrying about the upkeep of a
@@ -116,7 +110,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
 
             <div className="flex max-w-sm flex-col">
               <Image
-                src="/services-semi.png"
+                src={semiIndependentServicesImg}
                 className="h-full w-auto"
                 alt=""
               />
@@ -124,7 +118,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 <h3 className="mb-6 text-2xl font-medium">
                   Semi-Independent Living
                 </h3>
-                <p className="mb-8">
+                <p className="mb-8 text-left">
                   Our semi-independent living program allows residents to live
                   comfortably and independently while enjoying the peace of mind
                   that comes with having access to support and assistance when
@@ -143,14 +137,10 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
             </div>
 
             <div className="flex max-w-sm flex-col">
-              <Image
-                src="/services-memory.png"
-                className="h-full w-auto"
-                alt=""
-              />
+              <Image src={memoryServiceImg} className="h-full w-auto" alt="" />
               <div className="flex flex-col bg-white py-6 px-8">
                 <h3 className="mb-6 text-2xl font-medium">Memory Care</h3>
-                <p className="mb-8">
+                <p className="mb-8 text-left">
                   Our memory care program provides a supportive and caring
                   environment for our residents, allowing them to maintain their
                   independence and while receiving the care and assistance they
@@ -183,7 +173,7 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                 alt=""
               />
               <div className="flex flex-col bg-white py-6 px-8">
-                <h3 className="mb-6 text-2xl font-medium">
+                <h3 className="mb-6 text-center text-2xl font-medium lg:text-left">
                   Restaurant-Style Dining
                 </h3>
                 <p className="mb-8 max-w-md">
@@ -194,7 +184,8 @@ const Index = ({ activityCalendar }: { activityCalendar: SanityFileLink }) => {
                   their health, tastes and preferences in mind.
                 </p>
                 <a
-                  href="#"
+                  href="/SampleMenu.pdf"
+                  target="_blank"
                   className="inline-flex max-w-sm items-center gap-x-2 rounded underline"
                 >
                   Sample Menu{" "}
