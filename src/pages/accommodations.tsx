@@ -14,70 +14,71 @@ import manorSalon from "../../public/manor-salon.png";
 import manorLobby from "../../public/manor-lobby.png";
 import Carousel from "@/components/Carousel/Carousel";
 import { EmblaOptionsType } from "embla-carousel-react";
-
-const suites = [
-  {
-    name: "Studio Suite",
-    heading: "Suitable for a single person with a living area and a bathroom.",
-    description:
-      "Studio suites are open concept bedroom and sitting area varying in sizes, some with balconies and/or kitchenettes. Suites are availible with a 3-piece bathroom, and a large closet.",
-
-    features: {
-      type: "Studio",
-      bath: "1 Bath",
-      size: "300 - 400 Sq. Ft.",
-    },
-    images: [
-      "/small-studio.png",
-      "/studio-with-balcony.png",
-      "/studio-suite-1.jpg",
-      "/studio-suite-2.jpg",
-      "/studio-suite-3.jpg",
-    ],
-  },
-  {
-    name: "Studio Suite with Den",
-    heading:
-      "Suitable for a single person with a living area, a bathroom, and a den.",
-    description:
-      "Studio suites with a den are open and spacious with a separate bedroom and sitting area varying in sizes. All suites have a kitchenette, a 3-piece bathroom, and a large closet.",
-    features: {
-      type: "Studio",
-      bath: "1 Bath",
-      size: "400 - 550 Sq. Ft.",
-    },
-    images: ["/studio-with-den.png", "/studio-den-1.jpg", "/studio-den-2.jpg"],
-  },
-  {
-    name: "One Bedroom Suite",
-    heading:
-      "Suitable for a single person or a couple with a living area, a bathroom, and a bedroom.",
-    description:
-      "Our one bedroom suites are spacious with a separate bedroom and sitting area varying in sizes, some with balconies. All suites have a kitchenette, a 3-piece bathroom, and a large closet.",
-    features: {
-      type: "1 Bedroom",
-      bath: "1 Bath",
-      size: "650 - 800 Sq. Ft.",
-    },
-    images: ["/one-bed-suite.png"],
-  },
-  {
-    name: "Studio Suite - Assisted Living/Memory Care",
-    heading: "Suitable for a single person with a living area, and a bathroom.",
-    description:
-      "Studio suites are open concept bedroom and sitting area varying in sizes, some with balconies. All suites have a 3-piece barrier free bathroom, and a large closet.",
-    features: {
-      type: "Studio",
-      bath: "1 Bath",
-      size: "350 - 400 Sq. Ft.",
-    },
-    images: ["/studio-assisted.png"],
-  },
-];
+import useTranslation from "next-translate/useTranslation";
 
 const Accommodations = () => {
+  const { t } = useTranslation("accommodations");
   const OPTIONS: EmblaOptionsType = {};
   const SLIDE_COUNT = 10;
+
+  const suites = [
+    {
+      name: t("studio-suite"),
+      heading: t("studio-suite-subheader"),
+      description: t("studio-suite-desc"),
+
+      features: {
+        type: "Studio",
+        bath: `1 ${t("bath")}`,
+        size: `300 - 400 ${t("sqft")}`,
+      },
+      images: [
+        "/small-studio.png",
+        "/studio-with-balcony.png",
+        "/studio-suite-1.jpg",
+        "/studio-suite-2.jpg",
+        "/studio-suite-3.jpg",
+      ],
+    },
+    {
+      name: t("studio-with-den"),
+      heading: t("studio-with-den-subheader"),
+      description: t("studio-with-den-desc"),
+      features: {
+        type: "Studio",
+        bath: `1 ${t("bath")}`,
+        size: `400 - 550 ${t("sqft")}`,
+      },
+      images: [
+        "/studio-with-den.png",
+        "/studio-den-1.jpg",
+        "/studio-den-2.jpg",
+      ],
+    },
+    {
+      name: t("one-bedroom-suite"),
+      heading: t("one-bedroom-suite-subheader"),
+      description: t("one-bedroom-suite-desc"),
+      features: {
+        type: "1 Bedroom",
+        bath: `1 ${t("bath")}`,
+        size: `650 - 800 ${t("sqft")}`,
+      },
+      images: ["/one-bed-suite.png"],
+    },
+    {
+      name: t("studio-suite-care-side"),
+      heading: t("studio-suite-care-side-subheader"),
+      description: t("studio-suite-care-side-desc"),
+      features: {
+        type: "Studio",
+        bath: `1 ${t("bath")}`,
+        size: `350 - 400 ${t("sqft")}`,
+      },
+      images: ["/studio-assisted.png"],
+    },
+  ];
+
   return (
     <>
       <section>
@@ -85,11 +86,11 @@ const Accommodations = () => {
           <div className="py-24">
             <div className="mb-20 flex w-full flex-col text-center">
               <Heading
-                title="Accommodations"
+                title={t("header")}
                 className="text-center lg:text-center"
               />
               <p className="mx-auto text-center text-base leading-relaxed">
-                Explore some of our beautiful spaces at Rockland Manor.
+                {t("subheader")}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-4 ">
@@ -99,7 +100,7 @@ const Accommodations = () => {
                   src={manorTheatre}
                   alt=""
                 />
-                <div className="py-4 text-center">Theatre</div>
+                <div className="py-4 text-center">{t("theatre")}</div>
               </div>
               <div>
                 <Image
@@ -107,7 +108,7 @@ const Accommodations = () => {
                   src={manorBar}
                   alt=""
                 />
-                <div className="py-4 text-center">Bar</div>
+                <div className="py-4 text-center">{t("bar")}</div>
               </div>
               <div>
                 <Image
@@ -115,7 +116,7 @@ const Accommodations = () => {
                   src={manorLibrary}
                   alt=""
                 />
-                <div className="py-4 text-center">Library</div>
+                <div className="py-4 text-center">{t("library")}</div>
               </div>
               <div>
                 <Image
@@ -123,7 +124,7 @@ const Accommodations = () => {
                   src={manorChapel}
                   alt=""
                 />
-                <div className="py-4 text-center">Chapel</div>
+                <div className="py-4 text-center">{t("chapel")}</div>
               </div>
               <div>
                 <Image
@@ -131,7 +132,7 @@ const Accommodations = () => {
                   src={manorSalon}
                   alt=""
                 />
-                <div className="py-4 text-center">Hair Salon</div>
+                <div className="py-4 text-center">{t("hair-salon")}</div>
               </div>
               <div>
                 <Image
@@ -139,7 +140,7 @@ const Accommodations = () => {
                   src={manorLobby}
                   alt=""
                 />
-                <div className="py-4 text-center text-base">Lobby</div>
+                <div className="py-4 text-center text-base">{t("lobby")}</div>
               </div>
             </div>
           </div>
@@ -149,15 +150,11 @@ const Accommodations = () => {
         <Container>
           <div className="px-4">
             <SubHeading
-              title="Suite Options"
+              title={t("suite-options")}
               className="text-center lg:text-center"
             />
             <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-              All suites feature a 3-piece bathroom with safety grab bars, vinyl
-              and laminate flooring, blinds, and casement style windows as well
-              as individually set heating/cooling system. For your safety each
-              suite constains a nurse call bell system via telephone in the room
-              as well as a pull cord in the bathroom, smoke and heat detectors.
+              {t("suite-options-subheader")}
             </p>
           </div>
           <div className="w-full space-y-2 px-4 pt-16">

@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import Layout from "@/components/layout";
 import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     // if studio, then render without layout
     // otherwise, render with layout
@@ -17,3 +17,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default App;
