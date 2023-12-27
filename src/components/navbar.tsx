@@ -7,6 +7,17 @@ import useScrollPosition from "@/hooks/useScrollPosition";
 import { classNames } from "@/utils/helperFunctions";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 export default function Navbar() {
   const { t } = useTranslation("navbar");
@@ -37,11 +48,12 @@ export default function Navbar() {
           scrollPosition > 140
             ? "trasition py-2 duration-500 ease-in-out"
             : "py-6",
-          "mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8"
+          "mx-auto flex max-w-7xl items-center justify-between gap-10 px-6 lg:px-8"
         )}
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        {/* Logo */}
+        <div className="flex">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Rockland Manor</span>
             <Image
@@ -53,6 +65,7 @@ export default function Navbar() {
             />
           </Link>
         </div>
+        {/* Mobile Hamburger Menu */}
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -63,20 +76,28 @@ export default function Navbar() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              scroll={false}
-              className="group text-sm uppercase leading-6 text-dark-brown-900 transition duration-300"
-            >
-              {item.name}
-              <span className="block h-0.5 max-w-0 bg-dark-brown-600 transition-all duration-500 group-hover:max-w-full"></span>
-            </Link>
-          ))}
-        </div>
-        <div className="hidden gap-4 lg:flex lg:flex-1 lg:justify-end">
+        <NavigationMenu className="hidden lg:flex lg:gap-x-12">
+          <NavigationMenuList>
+            {navigation.map((item) => (
+              <NavigationMenuItem>
+                <Link key={item.name} href={item.href} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {item.name}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        <div className="hidden items-center gap-4 lg:flex lg:flex-1 lg:justify-end">
+          <Link
+            href="/"
+            locale={locale === "en" ? "fr" : "en"}
+            className="mr-4"
+          >
+            {locale === "en" ? "FR" : "EN"}
+          </Link>
           {/* Address */}
           <div className="flex items-center gap-2 border-r-2 pr-4">
             <MapPinIcon className="h-6 w-6" aria-hidden="true" />
@@ -87,6 +108,7 @@ export default function Navbar() {
           </div>
 
           {/* Phone Number CTA */}
+
           <div className="flex flex-col">
             {t("call-us")}
             <a
@@ -97,9 +119,6 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-        <Link href="/" locale={locale === "en" ? "fr" : "en"}>
-          {locale === "en" ? "FR" : "EN"}
-        </Link>
       </nav>
       <Dialog
         as="div"
@@ -110,7 +129,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-10 " />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Rockland Manor</span>
               <Image
                 className="h-8 w-auto"
@@ -119,7 +138,7 @@ export default function Navbar() {
                 src="/logo.png"
                 alt=""
               />
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -142,7 +161,14 @@ export default function Navbar() {
                   </a>
                 ))}
               </div>
-              <div className="flex gap-4 py-6">
+              <div className="flex items-center justify-between gap-4 py-6">
+                <Link
+                  href="/"
+                  locale={locale === "en" ? "fr" : "en"}
+                  className="mr-4"
+                >
+                  {locale === "en" ? "FR" : "EN"}
+                </Link>
                 {/* Address */}
                 <div className="flex items-center gap-2 border-r-2 pr-4">
                   <MapPinIcon className="h-6 w-6" aria-hidden="true" />
