@@ -1,13 +1,15 @@
-const navigation = {
-  main: [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about-us" },
-    { name: "Services", href: "/#services" },
-    { name: "Jobs", href: "/careers" },
-  ],
-};
+import useTranslation from "next-translate/useTranslation";
 
 export default function Footer() {
+  const { t } = useTranslation("footer");
+  const navigation = {
+    main: [
+      { name: t("home-link"), href: "/" },
+      { name: t("about-link"), href: "/about-us" },
+      { name: t("services-link"), href: "/#services" },
+      { name: t("jobs-link"), href: "/careers" },
+    ],
+  };
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden py-20 px-6 sm:py-24 lg:px-8">

@@ -1,7 +1,8 @@
-import { Switch } from "@headlessui/react";
 import React, { useState } from "react";
+import useTranslation from "next-translate/useTranslation";
 
-const ContactForm = () => {
+const ContactForm = (props: any) => {
+  const { t } = useTranslation("contact");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -84,15 +85,21 @@ const ContactForm = () => {
     }
   };
 
+  // "contact-first-name": "First Name",
+  // "contact-last-name": "Last Name",
+  // "contact-email": "Email",
+  // "contact-phone": "Phone",
+  // "contact-message": "Message",
+  // "contact-submit": "Submit"
+
   return (
     <div className="isolate  py-24 px-6 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-dark-brown-900 sm:text-4xl">
-          Contact Us
+          {t("contact-header")}
         </h2>
         <p className="mt-2 text-center text-lg leading-8 text-gray-600">
-          We&apos;re here to help and answer any question you might have. We
-          look forward to hearing from you.
+          {t("contact-subheader")}
         </p>
       </div>
       <form
@@ -107,7 +114,7 @@ const ContactForm = () => {
               htmlFor="first-name"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              First name
+              {t("contact-first-name")}
             </label>
             <div className="mt-2.5">
               <input
@@ -134,7 +141,7 @@ const ContactForm = () => {
               htmlFor="last-name"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Last name
+              {t("contact-last-name")}
             </label>
             <div className="mt-2.5">
               <input
@@ -161,7 +168,7 @@ const ContactForm = () => {
               htmlFor="phone-number"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Phone number
+              {t("contact-phone")}
             </label>
             <div className="mt-2.5">
               <input
@@ -188,7 +195,7 @@ const ContactForm = () => {
               htmlFor="email"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Email address
+              {t("contact-email")}
             </label>
             <div className="mt-2.5">
               <input
@@ -215,7 +222,7 @@ const ContactForm = () => {
               htmlFor="message"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Message
+              {t("contact-message")}
             </label>
             <div className="mt-2.5">
               <textarea
@@ -243,7 +250,7 @@ const ContactForm = () => {
               type="submit"
               className="focus:shadow-outline-indigo flex w-full justify-center rounded-md border border-transparent bg-dark-brown-600 py-2 px-4 text-sm font-medium text-white transition duration-150 ease-in-out hover:bg-dark-brown-700 focus:border-dark-brown-700 focus:outline-none active:bg-dark-brown-700"
             >
-              Submit
+              {t("contact-submit")}
             </button>
           </span>
         </div>

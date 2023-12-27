@@ -1,0 +1,27 @@
+{
+    "header": "Agréments",
+    "subheader": "Explorez les agréments de notre résidence",
+    "theatre": "Théâtre",
+    "bar": "Bar",
+    "library": "Bibliothèque",
+    "chapel": "Chapelle",
+    "hair-salon": "Salon de coiffure",
+    "lobby": "Lobby",
+    "suite-options": "Options de suite",
+    "suite-options-subheader": "Toutes les suites sont équipées d'une salle de bain de 3 pièces avec des barres d'appui de sécurité, un revêtement de sol en vinyle et en stratifié, des stores et des fenêtres à guillotine, ainsi qu'un système de chauffage/refroidissement à réglage individuel. Pour votre sécurité, chaque suite est équipée d'un système d'appel infirmier via téléphone dans la chambre, ainsi que d'un cordon de traction dans la salle de bain, de détecteurs de fumée et de chaleur.",
+    "studio-suite": "Style Studio",
+    "studio-suite-subheader": "Adapté pour une personne seule avec un espace de vie et une salle de bains.",
+    "bath": "Salle de Bain",
+    "sqft": "Pieds carrés",
+    "studio-suite-desc": "Les studios sont des suites à concept ouvert comprenant une chambre et un coin salon de tailles variables, certaines avec des balcons et/ou des kitchenettes. Les suites sont disponibles avec une salle de bain de 3 pièces et un grand garderobe.",
+    "studio-with-den": "Style Studio avec Salon D'appoint",
+    "studio-with-den-subheader": "Adapté pour une personne seule avec un espace de vie, une salle de bain et un salon d'appoint.",
+    "studio-with-den-desc": "Les studios avec un salon d'appoint sont ouverts et spacieux, avec une chambre séparée et un coin salon de tailles variables. Toutes les suites sont équipées d'une kitchenette, d'une salle de bain de 3 pièces et d'un grand garderobe.",
+    "one-bedroom-suite": "Suite avec Une Chambre",
+    "one-bedroom-suite-subheader": "Suitable for a single person or a couple with a living area, a bathroom, and a bedroom.",
+    "one-bedroom-suite-desc": "Nos suites d'une chambre sont ouvert avec une chambre séparée et un coin salon de tailles variables, certaines avec des balcons. Toutes les suites sont équipées d'une kitchenette, d'une salle de bain de 3 pièces et d'un grand garderobe.",
+    "studio-suite-care-side": "Style Studio - Vie assistée/Soins de mémoire",
+    "studio-suite-care-side-subheader": "Adapté pour une personne seule avec un espace de vie et une salle de bains.",
+    "studio-suite-care-side-desc": "Les studios sont des suites à concept ouvert comprenant une chambre et un coin salon de tailles variables, certaines avec des balcons et/ou des kitchenettes. Les suites sont disponibles avec une salle de bain de 3 pièces et un grand garderobe."
+
+}

@@ -5,19 +5,23 @@ import Image from "next/image";
 import Link from "next/link";
 import useScrollPosition from "@/hooks/useScrollPosition";
 import { classNames } from "@/utils/helperFunctions";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Our Services", href: "/#services" },
-  { name: "Accommodations", href: "/accommodations" },
-];
+import { useRouter } from "next/router";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Navbar() {
+  const { t } = useTranslation("navbar");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { locale, locales } = useRouter();
 
   const scrollPosition = useScrollPosition();
   //"fixed top-0 left-0 z-20 mb-10 w-full bg-white/80"
+
+  const navigation = [
+    { name: t("home-link"), href: "/" },
+    { name: t("about-link"), href: "/about-us" },
+    { name: t("services-link"), href: "/#services" },
+    { name: t("accommodations-link"), href: "/accommodations" },
+  ];
 
   return (
     <header
@@ -84,7 +88,7 @@ export default function Navbar() {
 
           {/* Phone Number CTA */}
           <div className="flex flex-col">
-            Call Us Today
+            {t("call-us")}
             <a
               href="tel:6136274654"
               className="text-sm font-semibold uppercase leading-6 text-dark-brown-900"
@@ -93,6 +97,9 @@ export default function Navbar() {
             </a>
           </div>
         </div>
+        <Link href="/" locale={locale === "en" ? "fr" : "en"}>
+          {locale === "en" ? "FR" : "EN"}
+        </Link>
       </nav>
       <Dialog
         as="div"
@@ -147,7 +154,7 @@ export default function Navbar() {
 
                 {/* Phone Number CTA */}
                 <div className="flex flex-col">
-                  Call Us Today
+                  {t("call-us")}
                   <a
                     href="tel:6136274654"
                     className="text-sm font-semibold uppercase leading-6 text-dark-brown-900"
