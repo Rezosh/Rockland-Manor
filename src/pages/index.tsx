@@ -156,7 +156,7 @@ const Index = (props: PageProps) => {
                 alt=""
               />
               <div className="flex flex-col bg-white py-6 px-8">
-                <h3 className="mb-6 text-center text-2xl font-medium lg:text-left">
+                <h3 className="mb-6 text-2xl font-medium ">
                   {t("dining-header")}
                 </h3>
                 <p className="mb-8 max-w-md">{t("dining-paragraph")}</p>

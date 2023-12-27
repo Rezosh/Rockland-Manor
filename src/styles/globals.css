@@ -16,7 +16,7 @@
   p {
     @apply text-sm;
     @apply md:text-base;
-    @apply text-center;
+
     @apply md:text-left;
   }
 
