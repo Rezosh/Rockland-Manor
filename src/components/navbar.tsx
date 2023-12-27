@@ -79,7 +79,7 @@ export default function Navbar() {
         <NavigationMenu className="hidden lg:flex lg:gap-x-12">
           <NavigationMenuList>
             {navigation.map((item) => (
-              <NavigationMenuItem>
+              <NavigationMenuItem key={item.name}>
                 <Link key={item.name} href={item.href} legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     {item.name}
