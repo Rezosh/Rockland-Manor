@@ -38,7 +38,7 @@ export default function Navbar() {
     <header
       className={classNames(
         scrollPosition > 140 ? "shadow" : "shadow-none",
-        `trasition  top-0 left-0 z-20 w-full bg-white transition-shadow duration-500 ease-in-out ${
+        `trasition  left-0 top-0 z-20 w-full bg-white transition-shadow duration-500 ease-in-out ${
           mobileMenuOpen ? "hidden" : "fixed"
         }`
       )}
@@ -152,16 +152,17 @@ export default function Navbar() {
             <div className="-my-6 flex h-full flex-col justify-between divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
-              <div className="flex items-center justify-between gap-4 py-6">
+              <div className="flex items-center justify-between py-6">
                 <Link
                   href="/"
                   locale={locale === "en" ? "fr" : "en"}
@@ -169,24 +170,25 @@ export default function Navbar() {
                 >
                   {locale === "en" ? "FR" : "EN"}
                 </Link>
-                {/* Address */}
-                <div className="flex items-center gap-2 border-r-2 pr-4">
-                  <MapPinIcon className="h-6 w-6" aria-hidden="true" />
-                  <div className="flex flex-col text-sm">
-                    <strong>9045 County Road 17</strong>
-                    Rockland, ON K4K 0J9
+                <div className="flex">
+                  {/* Address */}
+                  <div className="mr-4 flex items-center gap-2 border-r-2 pr-4">
+                    <MapPinIcon className="h-6 w-6" aria-hidden="true" />
+                    <div className="flex flex-col text-sm">
+                      <strong>9045 County Road 17</strong>
+                      Rockland, ON K4K 0J9
+                    </div>
                   </div>
-                </div>
-
-                {/* Phone Number CTA */}
-                <div className="flex flex-col">
-                  {t("call-us")}
-                  <a
-                    href="tel:6136274654"
-                    className="text-sm font-semibold uppercase leading-6 text-dark-brown-900"
-                  >
-                    613-627-4854
-                  </a>
+                  {/* Phone Number CTA */}
+                  <div className="flex flex-col">
+                    {t("call-us")}
+                    <a
+                      href="tel:6136274654"
+                      className="text-sm font-semibold uppercase leading-6 text-dark-brown-900"
+                    >
+                      613-627-4854
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
