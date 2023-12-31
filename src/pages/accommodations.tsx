@@ -85,10 +85,9 @@ const Accommodations = () => {
         <Container>
           <div className="py-24">
             <div className="mb-20 flex w-full flex-col text-center">
-              <Heading
-                title={t("header")}
-                className="text-center lg:text-center"
-              />
+              <Heading className="text-center lg:text-center">
+                {t("header")}
+              </Heading>
               <p className="mx-auto text-center text-base leading-relaxed">
                 {t("subheader")}
               </p>
@@ -149,10 +148,9 @@ const Accommodations = () => {
       <section className="mt-10">
         <Container>
           <div className="px-4">
-            <SubHeading
-              title={t("suite-options")}
-              className="text-center lg:text-center"
-            />
+            <SubHeading className="text-center lg:text-center">
+              {t("suite-options")}
+            </SubHeading>
             <p className="mx-auto text-base leading-relaxed lg:w-2/3">
               {t("suite-options-subheader")}
             </p>

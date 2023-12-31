@@ -33,24 +33,24 @@ const SemiIndependentCarePage = () => {
           className="h-[250px] w-full object-cover mix-blend-overlay"
           alt="Picture of the Rockland Manor front entrance"
         />
-        <Heading title={t("header")} className="absolute text-white" />
+        <Heading className="absolute text-white">{t("header")}</Heading>
       </div>
 
       <div className="px-6 py-32 lg:px-8">
         <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
           <div className="flex flex-col gap-20">
             <div>
-              <SubHeading title={t("subheader")} />
+              <SubHeading>{t("subheader")}</SubHeading>
               <p className="text-center lg:text-left">{t("paragraph")}</p>
             </div>
 
             <div>
-              <SubHeading title={t("subheader2")} />
+              <SubHeading>{t("subheader2")}</SubHeading>
               <p className="text-center lg:text-left">{t("paragraph2")}</p>
             </div>
 
             <div>
-              <SubHeading title={t("subheader3")} />
+              <SubHeading>{t("subheader3")}</SubHeading>
               <p className="text-center lg:text-left">{t("paragraph3")}</p>
               <ul className="mt-10 grid lg:grid-cols-3 ">
                 {amenities.map((amenity) => (
@@ -76,7 +76,7 @@ const SemiIndependentCarePage = () => {
           alt="Image of rockland manor exterior"
         />
         <div className="p-12 text-center lg:text-left">
-          <SubHeading title={t("cta-header")} />
+          <SubHeading>{t("cta-header")}</SubHeading>
           <p>{t("cta-paragraph")}</p>
           <Link
             href="/contact"

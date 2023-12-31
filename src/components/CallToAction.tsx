@@ -14,7 +14,7 @@ export default function CTA() {
         alt="Image of rockland manor exterior"
       />
       <div className="p-12 text-center lg:text-left">
-        <SubHeading title="Join Our Vibrant Community Today!" />
+        <SubHeading>Join Our Vibrant Community Today!</SubHeading>
         <p>
           Ready to experience the comfort and convenience of living at Rockland
           Manor? Schedule a complimentary visit to see our community and learn

@@ -6,7 +6,7 @@ const Careers = () => {
     <>
       <section>
         <Container>
-          <Heading title="Careers" />
+          <Heading>Careers</Heading>
           <p className="text-left">
             Welcome to Rockland Manor, a place where we prioritize a
             family-oriented environment that fosters job satisfaction,
@@ -21,7 +21,7 @@ const Careers = () => {
       </section>
       <section className="mt-16">
         <Container>
-          <SubHeading title="Available Positions" />
+          <SubHeading>Current Openings</SubHeading>
           <p className="text-left">
             We currently dont have any available positions. We are always
             willing to accept resumes for future positions. Please email your

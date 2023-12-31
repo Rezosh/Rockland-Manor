@@ -18,7 +18,7 @@ const AboutUsPage = () => {
             className="h-auto w-full object-cover md:w-1/2"
           />
           <div className="p-12 text-center lg:text-left">
-            <SubHeading title={t("about-us-header")} />
+            <SubHeading>{t("about-us-header")}</SubHeading>
             <p>{t("about-us-paragraph")}</p>
             <p className="mt-10">{t("about-us-paragraph-2")}</p>
           </div>

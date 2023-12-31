@@ -46,7 +46,7 @@ const Index = (props: PageProps) => {
         <div className="flex flex-col lg:flex-row-reverse">
           <Image src={heroImage} className="h-auto w-auto lg:w-1/2" alt="" />
           <div className="flex flex-col items-center justify-center bg-cream p-10 text-center lg:w-1/2 lg:items-start lg:p-16 lg:text-left">
-            <Heading title={t("hero-title")} />
+            <Heading>{t("hero-title")}</Heading>
             <p className="mb-8">{t("hero-paragraph")}</p>
             <div className="w-fit text-center lg:text-left">
               <a
@@ -60,7 +60,7 @@ const Index = (props: PageProps) => {
         </div>
 
         <section className="mt-16 flex flex-col items-center justify-between py-16 text-center  lg:flex-row lg:text-left">
-          <Heading title={t("header-2")} className="max-w-xl lg:max-w-lg" />
+          <Heading className="max-w-xl lg:max-w-lg">{t("header-2")}</Heading>
           <p className="max-w-xl lg:max-w-lg">{t("paragraph-2")}</p>
         </section>
       </Container>
@@ -70,7 +70,7 @@ const Index = (props: PageProps) => {
         id="services"
       >
         <Container>
-          <Heading title={t("services-header")} />
+          <Heading>{t("services-header")}</Heading>
           <div className="mt-10 flex flex-col items-center gap-6 lg:flex-row">
             <div className="flex max-w-sm flex-col">
               <Image
