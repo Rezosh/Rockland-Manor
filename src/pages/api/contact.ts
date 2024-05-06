@@ -20,7 +20,7 @@ export default async function handler(
 
   const mailData = {
     from: process.env.CONTACT_EMAIL,
-    to: "vsarault@manoirrocklandmanor.com",
+    to: "nbarreira@manoirrocklandmanor.com",
     subject: `New Message From Website - ${firstName} ${lastName}`,
     text: message,
     html: `<div>${message}</div><p>Sent By: ${
