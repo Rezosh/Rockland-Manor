@@ -6,7 +6,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { firstName, lastName, phoneNumber, email, message } = req.body;
+  const { firstName, lastName, phoneNumber, email, message, website } =
+    req.body;
+  if (website && website.trim() !== "") {
+    return res.status(200).json({ status: "OK" }); // Silently discard spam
+  }
 
   const transporter = nodemailer.createTransport({
     port: 465,
